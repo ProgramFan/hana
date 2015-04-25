@@ -10,39 +10,39 @@ matrix:
 
   include:
     # clang 3.5
-    - env: COMPILER=clang++-3.5 BOOST_VERSION=1.57.0 UNIT_TESTS=true
-      addons: &clang35
-        apt:
-          packages:
-            - clang-3.5
-            - valgrind
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.5
+    # - env: COMPILER=clang++-3.5 BOOST_VERSION=1.57.0 UNIT_TESTS=true
+    #   addons: &clang35
+    #     apt:
+    #       packages:
+    #         - clang-3.5
+    #         - valgrind
+    #       sources:
+    #         - ubuntu-toolchain-r-test
+    #         - llvm-toolchain-precise-3.5
 
-    - env: COMPILER=clang++-3.5 BOOST_VERSION=1.58.0 UNIT_TESTS=true
-      addons: *clang35
+    # - env: COMPILER=clang++-3.5 BOOST_VERSION=1.58.0 UNIT_TESTS=true
+    #   addons: *clang35
 
-    - env: COMPILER=clang++-3.5 BOOST_VERSION=trunk UNIT_TESTS=true
-      addons: *clang35
+    # - env: COMPILER=clang++-3.5 BOOST_VERSION=trunk UNIT_TESTS=true
+    #   addons: *clang35
 
 
     # clang 3.6
-    - env: COMPILER=clang++-3.6 BOOST_VERSION=1.57.0 UNIT_TESTS=true
-      addons: &clang36
-        apt:
-          packages:
-            - clang-3.6
-            - valgrind
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.6
+    # - env: COMPILER=clang++-3.6 BOOST_VERSION=1.57.0 UNIT_TESTS=true
+    #   addons: &clang36
+    #     apt:
+    #       packages:
+    #         - clang-3.6
+    #         - valgrind
+    #       sources:
+    #         - ubuntu-toolchain-r-test
+    #         - llvm-toolchain-precise-3.6
 
-    - env: COMPILER=clang++-3.6 BOOST_VERSION=1.58.0 UNIT_TESTS=true
-      addons: *clang36
+    # - env: COMPILER=clang++-3.6 BOOST_VERSION=1.58.0 UNIT_TESTS=true
+    #   addons: *clang36
 
-    - env: COMPILER=clang++-3.6 BOOST_VERSION=trunk UNIT_TESTS=true
-      addons: *clang36
+    # - env: COMPILER=clang++-3.6 BOOST_VERSION=trunk UNIT_TESTS=true
+    #   addons: *clang36
 
 
     # clang 3.7
@@ -56,11 +56,11 @@ matrix:
             - ubuntu-toolchain-r-test
             - llvm-toolchain-precise # latest
 
-    - env: COMPILER=clang++-3.7 BOOST_VERSION=1.58.0 UNIT_TESTS=true
-      addons: *clang37
+    # - env: COMPILER=clang++-3.7 BOOST_VERSION=1.58.0 UNIT_TESTS=true
+    #   addons: *clang37
 
-    - env: COMPILER=clang++-3.7 BOOST_VERSION=trunk UNIT_TESTS=true
-      addons: *clang37
+    # - env: COMPILER=clang++-3.7 BOOST_VERSION=trunk UNIT_TESTS=true
+    #   addons: *clang37
 
 
     # gcc 5.1
@@ -73,25 +73,25 @@ matrix:
         sources:
           - ubuntu-toolchain-r-test
 
-    - env: COMPILER=g++-5.1 BOOST_VERSION=1.58.0 UNIT_TESTS=true
-      addons: *gcc5
+    # - env: COMPILER=g++-5.1 BOOST_VERSION=1.58.0 UNIT_TESTS=true
+    #   addons: *gcc5
 
-    - env: COMPILER=g++-5.1 BOOST_VERSION=trunk UNIT_TESTS=true
-      addons: *gcc5
+    # - env: COMPILER=g++-5.1 BOOST_VERSION=trunk UNIT_TESTS=true
+    #   addons: *gcc5
 
 
     # Release benchmarks
-    - env: COMPILER=clang++-3.5 BOOST_VERSION=1.57.0 BENCHMARKS=true BUILD_TYPE=Release
-      addons: *clang35
+    # - env: COMPILER=clang++-3.5 BOOST_VERSION=1.57.0 BENCHMARKS=true BUILD_TYPE=Release
+    #   addons: *clang35
 
-    - env: COMPILER=clang++-3.6 BOOST_VERSION=1.57.0 BENCHMARKS=true BUILD_TYPE=Release
-      addons: *clang36
+    # - env: COMPILER=clang++-3.6 BOOST_VERSION=1.57.0 BENCHMARKS=true BUILD_TYPE=Release
+    #   addons: *clang36
 
-    - env: COMPILER=clang++-3.7 BOOST_VERSION=1.57.0 BENCHMARKS=true BUILD_TYPE=Release
-      addons: *clang37
+    # - env: COMPILER=clang++-3.7 BOOST_VERSION=1.57.0 BENCHMARKS=true BUILD_TYPE=Release
+    #   addons: *clang37
 
-    - env: COMPILER=g++-5.1 BOOST_VERSION=1.57.0 BENCHMARKS=true BUILD_TYPE=Release
-      addons: *gcc5
+    # - env: COMPILER=g++-5.1 BOOST_VERSION=1.57.0 BENCHMARKS=true BUILD_TYPE=Release
+    #   addons: *gcc5
 
 
     # Debug benchmarks
@@ -99,17 +99,17 @@ matrix:
     # Note: We do _not_ run the Debug benchmarks on Clang 3.5, because it does not
     # have support for debug information for `auto`, and it produces compilation
     # errors. So we use the default build type instead for Clang 3.5.
-    - env: COMPILER=clang++-3.5 BOOST_VERSION=1.57.0 BENCHMARKS=true
-      addons: *clang35
+    # - env: COMPILER=clang++-3.5 BOOST_VERSION=1.57.0 BENCHMARKS=true
+    #   addons: *clang35
 
-    - env: COMPILER=clang++-3.6 BOOST_VERSION=1.57.0 BENCHMARKS=true BUILD_TYPE=Debug
-      addons: *clang36
+    # - env: COMPILER=clang++-3.6 BOOST_VERSION=1.57.0 BENCHMARKS=true BUILD_TYPE=Debug
+    #   addons: *clang36
 
-    - env: COMPILER=clang++-3.7 BOOST_VERSION=1.57.0 BENCHMARKS=true BUILD_TYPE=Debug
-      addons: *clang37
+    # - env: COMPILER=clang++-3.7 BOOST_VERSION=1.57.0 BENCHMARKS=true BUILD_TYPE=Debug
+    #   addons: *clang37
 
-    - env: COMPILER=g++-5.1 BOOST_VERSION=1.57.0 BENCHMARKS=true BUILD_TYPE=Debug
-      addons: *gcc5
+    # - env: COMPILER=g++-5.1 BOOST_VERSION=1.57.0 BENCHMARKS=true BUILD_TYPE=Debug
+    #   addons: *gcc5
 
 
 env:
@@ -207,8 +207,8 @@ script:
   - if [[ "${UNIT_TESTS}" == "true" ]]; then make memcheck.all; fi
 
 
-notifications:
-  webhooks:
-    urls: https://webhooks.gitter.im/e/ce1e3a2036d94b4a644f
-    on_success: change
-    on_failure: always
+# notifications:
+#   webhooks:
+#     urls: https://webhooks.gitter.im/e/ce1e3a2036d94b4a644f
+#     on_success: change
+#     on_failure: always
